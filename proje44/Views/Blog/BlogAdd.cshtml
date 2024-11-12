@@ -1,0 +1,61 @@
+﻿@model EntityLayer.Concrete.Blog
+
+
+@{
+    ViewData["Title"] = "BlogAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Yeni Blog Sayfası</h1>
+@using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
+{
+    @Html.Label("Blog Başlığı")
+    @Html.TextBoxFor(x => x.BlogBaslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogBaslik, "", new { @class = "text-success" })
+    <br />
+    <br />
+    @Html.Label("Blog Görseli")
+    @Html.TextBoxFor(x => x.BlogImg, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogImg, "", new { @class = "text-success" })
+    <br />
+    <br />
+    @Html.Label("Blog Küçük Görsel")
+    @Html.TextBoxFor(x => x.BlogkucukImg, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Blog Kategori")
+    @Html.DropDownListFor(x => x.kategoriID, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Blog İçeriği")
+    @Html.TextAreaFor(x => x.Blogicerik, 15, 3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Blogicerik, "", new { @class = "text-success" })
+    <br />
+    <br />
+    <button class="btn btn-info">Blog'u Kaydet</button>
+}
+
+@*<h1>Yeni Blog Ekle</h1>
+    <br />
+    @using (Html.BeginForm("BlogAdd", "Blog", FormMethod.Post))
+    {
+        @Html.Label("Blog Başlığı")
+        @Html.TextBoxFor(x => x.BlogBaslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogBaslik)
+        <br />
+        @Html.Label("Blog Görseli")
+        @Html.TextBoxFor(x => x.BlogImg, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.BlogImg)
+        <br />
+        @Html.Label("Blog Görseli")
+        @Html.TextBoxFor(x => x.BlogkucukImg, new { @class = "form-control" })
+        <br />
+        @Html.Label("Blog Kategori")
+        @Html.DropDownListFor(x=>x.kategoriID,(List<SelectListItem>)ViewBag.cv, new {@class="form-control" })
+        <br />
+        @Html.Label("Blog İçeriği")
+        @Html.TextAreaFor(x => x.Blogicerik, 20, 3, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Blogicerik)
+        <br />
+        <button class="btn btn-info">Yazıyı Kaydet</button>
+    }*@

@@ -1,0 +1,26 @@
+﻿@using proje44.Controllers
+@model Class1
+@{
+    ViewData["Title"] = "AddYazar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Yazar Adı Soyadı</label>
+    <label for="exampleInputName1">Yazar Adı Soyadı</label>
+    <input type="text" asp-for="@Model.yazarAd" class="form-control" />
+    <br />
+    <label for="exampleInputName1">Yazar Hakkında</label>
+    <input type="text" asp-for="@Model.yazarHakkinda" class="form-control" />
+    <br />
+    <label for="exampleInputName1">Yazar Profil</label>
+    <input type="text" asp-for="@Model.yazarImg" class="form-control" />
+    <br />
+    <label for="exampleInputName1">Yazar Mail</label>
+    <input type="text" asp-for="@Model.yazarMail" class="form-control" />
+    <br />
+    <label for="exampleInputName1">Yazar Şifre</label>
+    <input type="text" asp-for="@Model.yazarSifre" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-info">Yazar Ekle</button>
+</form>

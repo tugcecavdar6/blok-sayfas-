@@ -1,0 +1,22 @@
+﻿@model proje44.Controllers.Class1
+@{
+    ViewData["Title"] = "EditYazar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Api ile Yazar Güncelleme Sayfası</h1>
+<form method="post">
+    <label>#</label>
+    @Html.TextBoxFor(x => x.yazarID, new { @class = "form-control" })
+    <br />
+    <label>Yazar Adı</label>
+    @Html.TextBoxFor(x => x.yazarAd, new { @class = "form-control" })
+    <br />
+    <label>Yazar Hakkında</label>
+    @Html.TextBoxFor(x => x.yazarHakkinda, new { @class = "form-control" })
+    <br />
+    <label>Yazar Profil</label>
+    @Html.TextBoxFor(x => x.yazarImg, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

@@ -1,0 +1,76 @@
+﻿@model UserUpdateViewModel
+
+@{
+    ViewData["Title"] = "WriterEditProfile";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yazar Profil Bilgileri Düzenleme</h4>
+            <br />
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputName1">Ad Soyad</label>
+                    <input type="text" asp-for="@Model.NameSurname" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName2">Kullanıcı Adı</label>
+                    <input type="text" asp-for="@Model.Username" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Mail Adresi</label>
+                    <input type="text" asp-for="@Model.Mail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Yeni Şifre</label>
+                    <input type="password" asp-for="@Model.Password" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Resim Yolu</label>
+                    <input type="text" asp-for="@Model.ImageUrl" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@*@using (Html.BeginForm("WriterEditProfile", "Writer", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yazar Profil Bilgileri Düzenleme</h4>
+                <br />
+                @Html.HiddenFor(x => x.yazarID, new { @class = "form-control" })
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label for="exampleInputName1">Ad Soyad</label>
+                        <input type="text" asp-for="@Model.yazarAd" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName2">Hakkımda</label>
+                        <input type="text" asp-for="@Model.yazarHakkinda" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Mail Adresi</label>
+                        <input type="text" asp-for="@Model.yazarMail" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Yeni Şifre</label>
+                        <input type="password" asp-for="@Model.yazarSifre" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Resim Yolu</label>
+                        <input type="text" asp-for="@Model.yazarImg" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                    <button class="btn btn-light">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}*@

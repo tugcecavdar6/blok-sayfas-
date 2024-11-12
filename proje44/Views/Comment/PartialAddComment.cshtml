@@ -1,0 +1,28 @@
+﻿@*<div class="comment-top">
+    <h4>Yorum Yap</h4>
+    <div class="comment-bottom">
+        <form asp-action="PartialAddComment" asp-controller="Comment" method="post">
+            <input class="form-control" type="text" name="CommentUserName" placeholder="Adınız ve Soyadınız..." required="">
+            <input class="form-control" type="text" name="CommentTitle" placeholder="Konu..." required="">
+            <textarea class="form-control" name="CommentContent" placeholder="Yorumunuz..." required=""></textarea>
+            <button type="submit" class="btn btn-primary submit">Yorum Yap</button>
+        </form>
+    </div>
+</div>*@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="comment-top">
+
+    <h4>Bir Yorum Yapın</h4>
+   
+    <div class="comment-bottom">
+       
+        <form action="/Comment/PartialAddComment/" method="post">
+            <input type="hidden" placeholder="@ViewBag.deger" name="BlogID" value="@ViewBag.deger" required />
+            <input type="text" name="yorumAd" placeholder="Ad Soyad" required="">
+            <input type="text" name="yorumBaslik" placeholder="Konu" required="">
+            <textarea name="yorumicerik" placeholder="Yorumunuz..." required=""></textarea>
+            <button type="submit" class="btn btn-primary submit">Yorum Yap</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>Yazarın Blogları</h1>
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Blog Başlığı</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.BlogID</td>
+    <td>@item.BlogBaslik</td>
+    <td>@item.BlogTarih.ToShortDateString()</td>
+    <td>@item.kategoriID</td>
+    <td>
+        @if (item.BlogDurum)
+        {
+<span class="badge badge-success">Aktif</span> }
+                else
+                {
+<span class="badge badge-warning">Pasif</span>                }
+    </td>
+    <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Blog/EditBlog/@item.BlogID" class="btn btn-warning">Düzenle</a></td>
+</tr>}
+</table>
+<a href="/Blog/BlogAdd/" class="btn btn-primary" style="margin-top: 50px;margin-left: 800px  ">Yeni Blog Oluştur</a>
+
+
+
+
+
+@*<h1>Yazarın Blogları</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Blog Başlığı</th>
+            <th>Oluşturma Tarihi</th>
+            <th>Kategori</th>
+            <th>Durum</th>
+            <th>Sil</th>
+            <th>Düzenle</th>
+        </tr>
+        @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.BlogID</td>
+                        <td>@item.BlogBaslik</td>
+                        <td>@(((DateTime)item.BlogTarih).ToString("dd-MMM-yyyy"))</td>
+                        <td>@item.kategoriID</td>
+                        <td>@item.BlogDurum</td>
+                        <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-danger">Sil</a> </td>
+                        <td><a href="/Blog/EditBlog/@item.BlogID" class="btn btn-warning">Düzenle</a> </td>
+                    </tr>
+                }
+    </table>
+    <a href="/Blog/BlogAdd/" class="btn btn-primary">Yeni Blog Oluştur</a>*@
+

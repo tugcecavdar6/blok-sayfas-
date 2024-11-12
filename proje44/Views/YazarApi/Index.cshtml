@@ -1,0 +1,35 @@
+﻿@using proje44.Controllers
+@model List<Class4>
+
+@{ ViewData["Title"] = "Index";
+                Layout = "~/Views/Shared/WriterLayout.cshtml"; }
+
+@await Component.InvokeAsync("WriterAboutOnDashboard")
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Adı Soyadı</th>
+        <th>Kullanıcı Adı</th>
+        <th>Hakkında</th>
+        <th>Mail Adresi</th>
+        <th>Şifre</th>
+        <th>Resim</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.yazarID</td>
+    <td>@item.yazarAd</td>
+    <td>@item.yazarAd</td>
+    <td>@item.yazarHakkinda</td>
+    <td>@item.yazarMail</td>
+    <td>@item.yazarSifre</td>
+    <td>@item.yazarImg</td>
+
+    <td><a href="/YorumListesiApi/AddYazar/@item.yazarID" class="btn btn-outline-danger">Düzenle</a></td>
+
+</tr>
+}
+</table>
